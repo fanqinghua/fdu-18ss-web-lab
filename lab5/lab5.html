@@ -126,10 +126,7 @@
             <th>Amount</th>
          </tr>
 
-         <!-- 这是你需要修改的地方 -->
-         <!-- 本来是下面这样👇 -->
-
-         <!-- <tr>
+       <tr>
             <td><img class="img-thumbnail" src="images/art/tiny/116010.jpg" alt="..."></td>
             <td>Artist Holding a Thistle</td>
             <td>2</td>
@@ -264,7 +261,37 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap3_defaultTheme/assets/js/jquery.js"></script>
-    <script src="bootstrap3_defaultTheme/dist/js/bootstrap.min.js"></script>    
+<script>
+    good=[
+        ['goods1','116010.jpg','Artist Holding a Thistle',2,500],
+        ['goods2','113010.jpg','Self-portrait in a Straw Hat',1,700]
+    ]
+
+    window.onload=function(){
+        for (i=0;i<=1;i++){
+            goods(good[i][0],good[i][1],good[i][2],good[i][3],good[i][4])
+        }
+        pay();
+    }
+
+    function goods(id,file,product,quantity,price) {
+        document.getElementById(id).innerHTML='<td><img class="img-thumbnail" src="images/art/tiny/'+file+'" alt="..."></td>\n' +
+            '            <td>'+product+'</td>\n' +
+            '            <td>'+quantity+'</td>\n' +
+            '            <td>$'+price+'</td>\n' +
+            '            <td>$'+(quantity*price)+'</td>'
+    }
+    function pay() {
+        subtotal=good[0][3]*good[0][4]+good[1][3]*good[1][4];
+        tax=subtotal*0.1;
+        shipping=100;
+        grandtotal=subtotal+tax+shipping;
+
+        document.getElementById('subtotal').innerHTML=subtotal;
+        document.getElementById('tax').innerHTML=tax;
+        document.getElementById('shipping').innerHTML=shipping;
+        document.getElementById('grandtotal').innerHTML=grandtotal;
+    }
+</script>
   </body>
 </html>
