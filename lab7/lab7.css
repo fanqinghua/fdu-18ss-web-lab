@@ -74,9 +74,3 @@ figcaption {
     background-repeat:repeat; 
 }
 
-/* temp tester 
-#imgManipulated img {
-   filter: opacity(62%) brightness(50%) contrast(50%);   
--webkit-filter: opacity(62%) brightness(50%) contrast(50%);  
-}
-*/

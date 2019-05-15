@@ -2,8 +2,8 @@
 <head>
 <title>Chapter 10</title>
 <link rel="stylesheet" href="lab7.css">
-<script>
-</script>      
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="lab7.js"> </script>
 </head>    
 <body class="tiled">
 <header>
@@ -21,19 +21,18 @@
            <p><button id="resetFilters">Reset</button> </p>
         </form>    
     </div>
-    <figure id="imgManipulated">
-        <img src="images/medium/painting1.jpg" > 
-        <figcaption>
-            <em>Still Life with Flowers in a Glass Vase</em> <br>
-            Jan Davidsz. de Heem, 1650 - 1683
-        </figcaption>
+    <figure id="imgManipulated" >
+        <img  id="first" src="images/medium/painting1.jpg" >
+        <p class="introduction">
+            Still Life with Flowers in a Glass Vase  </p>
+        <figcaption class="writer">   Jan Davidsz. de Heem, 1650 - 1683  </figcaption>
     </figure>   
     <div id="thumbBox">
-        <div><img src="images/small/painting1.jpg"  alt="Still Life with Flowers in a Glass Vase" title="Jan Davidsz. de Heem, 1650 - 1683"/></div>
-        <div><img src="images/small/painting2.jpg"  alt="Portrait of Alida Christina Assink" title="Jan Adam Kruseman, 1833"/></div>
+        <div ><img  class="small1" src="images/small/painting1.jpg"  alt="Still Life with Flowers in a Glass Vase" title="Jan Davidsz. de Heem, 1650 - 1683"/></div>
+        <div ><img class="small2" src="images/small/painting2.jpg"  alt="Portrait of Alida Christina Assink" title="Jan Adam Kruseman, 1833"/></div>
         <div><img src="images/small/painting3.jpg"  alt="Self-portrait" title="Vincent van Gogh, 1887"/></div>
-        <div><img src="images/small/painting4.jpg"  alt="William II, Prince of Orange, and his Bride, Mary Stuart" title="Anthony van Dyck, 1641"/></div>
-        <div><img src="images/small/painting5.jpg"  alt="Milkmaid" title="Johannes Vermeer, c. 1660"/></div>
+        <div><img class="small3" src="images/small/painting4.jpg"  alt="William II, Prince of Orange, and his Bride, Mary Stuart" title="Anthony van Dyck, 1641"/></div>
+        <div><img  class="small4" src="images/small/painting5.jpg"  alt="Milkmaid" title="Johannes Vermeer, c. 1660"/></div>
     </div>
 </main>
 <script>
