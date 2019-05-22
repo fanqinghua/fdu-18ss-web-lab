@@ -9,9 +9,11 @@ $shippingFlatAmount = 200;
 // 计算 subtotal, shipping, grand total
 // grand total = subtotal + shipping
 // 如果subtotal值超过阈值，则为100；反之则为$shippingFlatAmount
-$subtotal = 0;
-$shipping = 0;
-$grandTotal = 0;
+$subtotal = 25*25+50*50+40*35+300*20;
+if($subtotal>10000){
+$shipping = 100;}
+else{$shipping=$shippingFlatAmount;}
+$grandTotal = $subtotal+$shipping;
 
 ?>
 
@@ -31,13 +33,14 @@ $grandTotal = 0;
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 </head>
-
 <body>
-    
+
+
 <!-- You should decide where to add the `header.inc.php` and `left.inc.php` -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
             mdl-layout--fixed-header">
-
+    <?php include 'header.inc.php'; ?>
+    <?php include 'left.inc.php'; ?>
   <main class="mdl-layout__content mdl-color--grey-50">
     <header class="mdl-color--blue-grey-200">
       <h4>Order Summaries</h4>
