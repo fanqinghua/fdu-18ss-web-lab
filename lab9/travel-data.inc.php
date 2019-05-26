@@ -37,7 +37,7 @@
 
 
   $images = array();
-  $images[22] = array("id"=>22,"title" => "View of Cologne", "description" => "View of Cologne from atop the Cologne Cathedral", "country" => "Germany", "city" => "Cologne", "user" => "Joao Fernandes", "path" => "6114850721.jpg", "taken" => "August 8, 2017", "tags" => array("cathedral","high","birds-eye"));
+  $images[0] = array("id"=>22,"title" => "View of Cologne", "description" => "View of Cologne from atop the Cologne Cathedral", "country" => "Germany", "city" => "Cologne", "user" => "Joao Fernandes", "path" => "6114850721.jpg", "taken" => "August 8, 2017", "tags" => array("cathedral","high","birds-eye"));
 
   $images[54] = array("id"=>54,"title" => "Arch of Septimus Severus", "description" => "In the Roman Forum", "country" => "Italy", "city" => "Rome", "user" => "Ellie Sullivan", "path" => "9495574327.jpg", "taken" => "August 15, 2017", "tags" => array("rome","ruins","ancient","assassinated"));
 
