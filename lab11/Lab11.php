@@ -1,8 +1,16 @@
 <?php
-//Fill this place
+$servername = "localhost";
+$username = "root";
+$password = "15825553814";
+$dbname = "travel";
+// 创建连接
+$conn = new mysqli($servername, $username, $password,$dbname);
 
-//****** Hint ******
-//connect database and fetch data here
+// 检测连接
+if ($conn->connect_error) {
+    die("连接失败: " . $conn->connect_error);
+}
+echo "连接成功";
 
 
 ?>
@@ -29,7 +37,7 @@
 
 <body>
     <?php include 'header.inc.php'; ?>
-    
+
 
 
     <!-- Page Content -->
@@ -40,13 +48,16 @@
             <form action="Lab11.php" method="get" class="form-horizontal">
               <div class="form-inline">
               <select name="continent" class="form-control">
-                <option value="0">Select Continent</option>
+                <option value="0 ">Select Continent</option>
                 <?php
-                //Fill this place
-
-                //****** Hint ******
-                //display the list of continents
-
+                $servername = "localhost";
+                $username = "root";
+                $password = "15825553814";
+                $dbname = "travel";
+                // 创建连接
+                $conn = new mysqli($servername, $username, $password,$dbname);
+                $sql = "SELECT ContinentCode,ContinentName FROM continents";
+                $result = $conn->query($sql);
                 while($row = $result->fetch_assoc()) {
                   echo '<option value=' . $row['ContinentCode'] . '>' . $row['ContinentName'] . '</option>';
                 }
@@ -55,12 +66,20 @@
               </select>     
               
               <select name="country" class="form-control">
-                <option value="0">Select Country</option>
-                <?php 
-                //Fill this place
+                <option value="0 ">Select Country</option>
+                <?php
 
-                //****** Hint ******
-                /* display list of countries */ 
+                $servername = "localhost";
+                $username = "root";
+                $password = "15825553814";
+                $dbname = "travel";
+                // 创建连接
+                $conn = new mysqli($servername, $username, $password,$dbname);
+                $sql = "SELECT CountryName,ISO  FROM countries";
+                $result = $conn->query($sql);
+                while($row = $result->fetch_assoc()) {
+                    echo '<option value=' . $row['ISO'] . '>' . $row['CountryName'] . '</option>';
+                }
                 ?>
               </select>    
               <input type="text"  placeholder="Search title" class="form-control" name=title>
@@ -73,24 +92,38 @@
                                     
 
 		<ul class="caption-style-2">
-            <?php 
-            //Fill this place
-
-            //****** Hint ******
-            /* use while loop to display images that meet requirements ... sample below ... replace ???? with field data
+            <?php
+           $servername = "localhost";
+            $username = "root";
+            $password = "15825553814";
+            $dbname = "travel";
+            // 创建连接
+            $conn = new mysqli($servername, $username, $password,$dbname);
+            $continent1= isset($_GET["continent"])? $_GET["continent"] :'';
+            $continent2 =isset($_GET["country"])? $_GET["country"] :'';
+            if($continent1 || $continent2){
+                $sql = "SELECT * FROM imagedetails WHERE ContinentCode='$continent1'or CountryCodeISO='$continent2'";
+                $result = mysqli_query($conn,$sql);
+            }else{
+                $sql = "SELECT * FROM imagedetails ";
+                $result = mysqli_query($conn,$sql);}
+         while($row = $result->fetch_assoc()) {
+                    $Path=$row['Path'];
+                    $title=$row['Title'];
+                    echo"
             <li>
-              <a href="detail.php?id=????" class="img-responsive">
-                <img src="images/square-medium/????" alt="????">
-                <div class="caption">
-                  <div class="blur"></div>
-                  <div class="caption-text">
-                    <p>????</p>
+              <a  href='detail.php?'  class=' img-responsive' >
+                <img src='images/square-medium/$Path' alt='????'>
+                <div class='caption'>
+                  <div class='blur'></div>
+                  <div class='caption-text'>
+                    <p>$title</p>
                   </div>
                 </div>
               </a>
-            </li>        
-            */ 
-            ?>
+            </li>  ";}
+
+  ?>
        </ul>       
 
       

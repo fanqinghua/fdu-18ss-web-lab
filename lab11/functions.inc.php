@@ -7,7 +7,6 @@ function generateLink($url, $label, $class) {
    return $link;
 }
 
-
 function outputPostRow($number)  {
     include("travel-data.inc.php");
 }
